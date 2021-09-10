@@ -14,4 +14,4 @@ dependencies:
   kemal:
     github: kemalcr/kemal
 
-license: MIT
+license: GNU GPLv3
