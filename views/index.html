@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Is It Friday?</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        height: 100vh;
+        background-image: linear-gradient(140deg, #8104b3, #1a7cc4);
+        color: white;
+        text-align: center;
+      }
+      ul {
+        list-style: none;
+        text-align: left;
+      }
+      a {
+        color: white;
+        text-decoration: none;
+      }
+      a:hover {
+        color: deepskyblue;
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="display: flex; height: inherit">
+      <div style="margin: auto">
+        Is It Friday?
+        <h1 id="friday"><%= Time.utc.friday? ? "YES!" : "no :(" %></h1>
+        <ul>
+          <li><a href="/plain">/plain</a> - Plaintext</li>
+          <li><a href="/boolean">/boolean</a> - Boolean</li>
+          <li><a href="/json">/json</a> - JSON</li>
+          <li><a href="/yaml">/yaml</a> - YAML</li>
+          <li><a href="/xml">/xml</a> - XML</li>
+          <li><a href="/binary">/binary</a> - Binary</li>
+        </ul>
+      </div>
+      <br />
+      <div style="top: calc(100vh - 31px); left: calc(100vw - 69px); position: absolute;">
+        <a href="//github.com/trbodev/is-it-friday">Github</a>
+      </div>
+    </div>
+    <script>
+      document.getElementById("friday").innerText =
+        new Date().getDay() === 5 ? "YES!" : "no :(";
+    </script>
+  </body>
+</html>
