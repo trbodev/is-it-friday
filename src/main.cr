@@ -7,7 +7,8 @@ error 404 do |ctx|
   "Not Found"
 end
 
-get "/" do
+get "/" do |ctx|
+  ctx.response.content_type = "text/plain"
   Time.utc.friday? ? "Yes" : "No"
 end
 
