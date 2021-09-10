@@ -1,0 +1,17 @@
+name: is-it-friday
+version: 0.1.0
+
+authors:
+  - trbodev <55338035+trbodev@users.noreply.github.com>
+
+targets:
+  main:
+    main: src/main.cr
+
+crystal: 1.1.1
+
+dependencies:
+  kemal:
+    github: kemalcr/kemal
+
+license: MIT
