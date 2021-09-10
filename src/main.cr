@@ -14,4 +14,9 @@ end
 
 Kemal.config.powered_by_header = false
 
-Kemal.run ENV["PORT"].to_i
+logging Kemal.config.env === "development"
+
+Kemal.run do |config|
+  config.powered_by_header = false
+  config.server.not_nil!.bind_tcp(ENV["HOST"], ENV["PORT"].to_i)
+end
