@@ -1,32 +1,8 @@
 version: 2.0
 shards:
-  awscr-s3:
-    git: https://github.com/taylorfinnell/awscr-s3.git
-    version: 0.8.2
-
-  awscr-signer:
-    git: https://github.com/taylorfinnell/awscr-signer.git
-    version: 0.8.2
-
-  content_disposition:
-    git: https://github.com/jetrockets/content_disposition.cr.git
-    version: 1.2.0
-
   exception_page:
     git: https://github.com/crystal-loot/exception_page.git
     version: 0.1.5
-
-  fastimage:
-    git: https://github.com/jetrockets/fastimage.cr.git
-    version: 1.2.1
-
-  habitat:
-    git: https://github.com/luckyframework/habitat.git
-    version: 0.4.7
-
-  hashids:
-    git: https://github.com/splattael/hashids.cr.git
-    version: 0.3.0
 
   kemal:
     git: https://github.com/kemalcr/kemal.git
@@ -39,8 +15,4 @@ shards:
   radix:
     git: https://github.com/luislavena/radix.git
     version: 0.4.1
-
-  shrine:
-    git: https://github.com/jetrockets/shrine.cr.git
-    version: 0.6.4
 
