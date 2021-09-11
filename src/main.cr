@@ -47,6 +47,20 @@ get "/binary" do |ctx|
   Time.utc.friday? ? "1" : "0"
 end
 
+get "/svg" do |ctx|
+  friday = Time.utc.friday?
+  ctx.response.status = :found
+  ctx.response.headers["Location"] = "https://img.shields.io/badge/Is%20It%20Friday%3F-#{friday ? "Yes!" : "no :("}-%23#{friday ? "1CED2A" : "ED1C1C"}"
+  ""
+end
+
+get "/png" do |ctx|
+  friday = Time.utc.friday?
+  ctx.response.status = :found
+  ctx.response.headers["Location"] = "https://raster.shields.io/badge/Is%20It%20Friday%3F-#{friday ? "Yes!" : "no :("}-%23#{friday ? "1CED2A" : "ED1C1C"}.png"
+  ""
+end
+
 Kemal.config.powered_by_header = false
 
 logging Kemal.config.env === "development"
