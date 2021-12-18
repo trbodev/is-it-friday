@@ -5,8 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta property="og:title" content="Is It Friday?" />
-    <meta property="og:description" content="<%= Time.utc.friday? ? "YES!" : "no :(" %>" />
-    <%= ENV["UMAMI_ANALYTICS_ENABLED"]? === "true" ? "<script async defer data-website-id=\"#{ENV["UMAMI_ANALYTICS_ID"]?}\" src=\"#{ENV["UMAMI_ANALYTICS_URL"]}/umami.js\"></script>" : "" %>
+    <meta property="og:description" content="{{ .Friday }}" />
     <title>Is It Friday?</title>
     <style>
       body {
@@ -29,13 +28,16 @@
         color: deepskyblue;
         text-decoration: underline;
       }
+      img {
+        margin-bottom: -3px;
+      }
     </style>
   </head>
   <body>
     <div style="display: flex; height: inherit">
       <div style="margin: auto">
         Is It Friday?
-        <h1 id="friday"><%= Time.utc.friday? ? "YES!" : "no :(" %></h1>
+        <h1 id="friday">{{ .Friday }}</h1>
         <ul>
           <li><a href="/plain">/plain</a> - Plaintext</li>
           <li><a href="/boolean">/boolean</a> - Boolean</li>
