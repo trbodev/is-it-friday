@@ -151,7 +151,7 @@ func main() {
 		}
 		rw.Header().
 			Add("Location",
-				"https://img.shields.io/badge/Is%20It%20Friday%3F-"+text+"-%23#"+color+"")
+				"https://img.shields.io/badge/Is%20It%20Friday%3F-"+text+"-%23"+color+"")
 		rw.WriteHeader(http.StatusFound)
 	})
 
@@ -164,7 +164,7 @@ func main() {
 		}
 		rw.Header().
 			Add("Location",
-				"https://raster.shields.io/badge/Is%20It%20Friday%3F-"+text+"-%23#"+color+"")
+				"https://raster.shields.io/badge/Is%20It%20Friday%3F-"+text+"-%23"+color+"")
 		rw.WriteHeader(http.StatusFound)
 
 	})
