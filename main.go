@@ -39,39 +39,36 @@ const (
 
 func generateText(t Type, friday bool) string {
 	var text string
-	if friday {
-		switch t {
-		case TypeExpresive:
-			text = "YES!"
-		case TypePlain:
-			text = "Yes"
-		case TypeBoolean:
-			text = fmt.Sprint(friday)
-		case TypeJSON:
-			text = `{"friday":` + fmt.Sprintf("%v", friday) + `}`
-		case TypeYAML:
-			text = `friday: ` + fmt.Sprintf("%v", friday)
-		case TypeXML:
-			text = `<?xml version="1.0" encoding="UTF-8"?><friday>` + fmt.Sprintf("%v", friday) + `</friday>`
-		case TypeBinary:
-			text = "1"
-		}
-	} else {
-		switch t {
-		case TypeExpresive:
-			text = "no :("
-		case TypePlain:
-			text = "No"
-		case TypeBoolean:
-			text = fmt.Sprint(friday)
-		case TypeJSON:
-			text = `{"friday":` + fmt.Sprintf("%v", !friday) + `}`
-		case TypeYAML:
-			text = `friday: ` + fmt.Sprintf("%v", !friday)
-		case TypeXML:
-			text = `<?xml version="1.0" encoding="UTF-8"?><friday>` + fmt.Sprintf("%v", !friday) + `</friday>`
-		case TypeBinary:
-			text = "0"
+	bstring := fmt.Sprintf("%v", friday)
+
+	switch t {
+	case TypeBoolean:
+		text = bstring
+	case TypeJSON:
+		text = `{"friday":` + bstring + `}`
+	case TypeYAML:
+		text = `friday: ` + bstring
+	case TypeXML:
+		text = `<?xml version="1.0" encoding="UTF-8"?><friday>` + bstring + `</friday>`
+	default:
+		if friday {
+			switch t {
+			case TypeExpresive:
+				text = "YES!"
+			case TypePlain:
+				text = "Yes"
+			case TypeBinary:
+				text = "1"
+			}
+		} else {
+			switch t {
+			case TypeExpresive:
+				text = "no :("
+			case TypePlain:
+				text = "No"
+			case TypeBinary:
+				text = "0"
+			}
 		}
 	}
 	return text
